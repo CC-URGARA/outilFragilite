@@ -4,28 +4,29 @@
 #'
 #' @param id,input,output,session Internal parameters for {shiny}.
 #'
-#' @noRd 
+#' @noRd
 #'
-#' @importFrom shiny NS tagList 
+#' @importFrom shiny NS tagList
 mod_score_list_etab_ui <- function(id){
   ns <- NS(id)
   tagList(
- 
+    h1("liste etab et score associé")
+
   )
 }
-    
+
 #' score_list_etab Server Functions
 #'
-#' @noRd 
+#' @noRd
 mod_score_list_etab_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
- 
+
   })
 }
-    
+
 ## To be copied in the UI
 # mod_score_list_etab_ui("score_list_etab_1")
-    
+
 ## To be copied in the server
 # mod_score_list_etab_server("score_list_etab_1")

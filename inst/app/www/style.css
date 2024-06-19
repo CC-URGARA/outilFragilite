@@ -1,1 +1,7 @@
- 
+
+/*force le dernier élement du menu à gauche à être en bas */
+ #sidebarItemExpanded > ul > :last-child {
+   position: absolute;
+   bottom: 0;
+   width: 100%;
+   }

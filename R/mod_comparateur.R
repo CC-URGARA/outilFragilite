@@ -4,28 +4,28 @@
 #'
 #' @param id,input,output,session Internal parameters for {shiny}.
 #'
-#' @noRd 
+#' @noRd
 #'
-#' @importFrom shiny NS tagList 
+#' @importFrom shiny NS tagList
 mod_comparateur_ui <- function(id){
   ns <- NS(id)
   tagList(
- 
+ h1("comparaison de plusieurs etab")
   )
 }
-    
+
 #' comparateur Server Functions
 #'
-#' @noRd 
+#' @noRd
 mod_comparateur_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
- 
+
   })
 }
-    
+
 ## To be copied in the UI
 # mod_comparateur_ui("comparateur_1")
-    
+
 ## To be copied in the server
 # mod_comparateur_server("comparateur_1")
