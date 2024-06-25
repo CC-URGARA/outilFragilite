@@ -4,13 +4,18 @@
 #'
 #' @param id,input,output,session Internal parameters for {shiny}.
 #'
+#' @importFrom DT DTOutput renderDT datatable
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
 mod_tab_score_ui <- function(id){
   ns <- NS(id)
   tagList(
-    h1("tableau de score par class indic")
+    div(class = "header",
+        h1("Tableau de score")
+    ),
+    p("Le tableau suivant décrit pour chaque indicateur les classes définies et le score associé."),
+    DTOutput(ns("tab_score"))
   )
 }
 
@@ -20,6 +25,11 @@ mod_tab_score_ui <- function(id){
 mod_tab_score_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
+
+    output$tab_score <- renderDT({
+      random_table(ncol = 5, nrow = 95) |>
+        DT_theme(theme = "top_filter")
+    })
 
   })
 }

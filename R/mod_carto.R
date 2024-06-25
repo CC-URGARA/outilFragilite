@@ -7,11 +7,15 @@
 #' @noRd
 #'
 #' @importFrom shiny NS tagList
+#' @importFrom leaflet leaflet addTiles leafletOutput renderLeaflet
 mod_carto_ui <- function(id){
   ns <- NS(id)
   tagList(
- h1("cartographie")
-  )
+    div(class = "header",
+        h1("Cartographie de la fragilité")
+    ),
+    leafletOutput(outputId = ns("carto"), height = 1200)
+    )
 }
 
 #' carto Server Functions
@@ -21,6 +25,11 @@ mod_carto_server <- function(id){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 
+
+    output$carto = renderLeaflet({
+      leaflet() |>
+        addTiles()
+    })
   })
 }
 

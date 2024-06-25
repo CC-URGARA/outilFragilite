@@ -10,7 +10,17 @@
 mod_export_ui <- function(id){
   ns <- NS(id)
   tagList(
- h1("export du fichier de resultats")
+    div(class = "header",
+        h1("Export")
+    ),
+    div(class = "text-box",
+        h2("Paramètres d'export"),
+        selectizeInput(inputId = ns("region"),
+                       label = "Région : ", choices = NULL),
+        actionButton(inputId = ns("bttn_pdf"), label = "Générer un rapport pdf"),
+        actionButton(inputId = ns("bttn_xlsx"), label = "Exporter les données au format Excel")
+    )
+
   )
 }
 

@@ -10,7 +10,37 @@
 mod_comparateur_ui <- function(id){
   ns <- NS(id)
   tagList(
- h1("comparaison de plusieurs etab")
+    div(class = "header",
+        h1("Comparateur d'établissements")
+    ),
+
+    div(class = "text-box",
+        h2("Filtres"),
+        fluidRow(
+          column(width = 4,
+                 selectizeInput(inputId = ns("finess"),
+                                label = "FINESS :", choices = NULL))
+        ),
+        fluidRow(
+          column(width = 4,
+                 selectizeInput(inputId = ns("RS"),
+                                label = "Raison sociale :", choices = NULL))
+        ),
+        fluidRow(
+          column(width = 4,
+                 actionButton(inputId = "bttn_comparaison", label = "Comparer les établissements"))
+        )
+    ),
+    fluidRow(
+      box(title = "Etab X", width = 6,
+          plot(1)),
+      box(title = "Etab X", width = 6,
+          plot(1)),
+      box(title = "Etab X", width = 6,
+          plot(1)),
+      box(title = "Etab X", width = 6,
+          plot(1))
+    )
   )
 }
 

@@ -1,7 +1,123 @@
+/*définition des couleurs*/
+/*Couleurs choisient sur la palette du gouvernement : https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-de-l-identite-de-l-etat/couleurs-palette/*/
+:root {
+ --blue-main: #000091;
+ --blue-main_active: #1212ff;
+ --blue-main_hover: #2323ff;
+ --grey-main: #666666;
+ --grey-main_active: #a6a6a6;
+ --grey-main_hover: #919191;
+}
 
-/*force le dernier élement du menu à gauche à être en bas */
- #sidebarItemExpanded > ul > :last-child {
-   position: absolute;
-   bottom: 0;
-   width: 100%;
-   }
+
+/* logo */
+.skin-blue .main-header .logo {
+                      background-color: var(--blue-main_active);
+                      }
+
+/* logo when hovered */
+.skin-blue .main-header .logo:hover {
+                      background-color: var(--blue-main_hover);
+                      }
+
+/* navbar (rest of the header) */
+.skin-blue .main-header .navbar {
+                      background-color: var(--blue-main);
+                      }
+
+/* toggle button when hovered  */
+.skin-blue .main-header .navbar .sidebar-toggle:hover{
+                    background-color: var(--blue-main_hover);
+                    }
+
+/* icon button when hovered  */
+.skin-blue .main-header .navbar .dropdown:hover{
+                    background-color: var(--blue-main_hover);
+                    }
+
+/* main sidebar */
+.skin-blue .main-sidebar {
+                      background-color: var(--grey-main);
+                      }
+
+/* active selected tab in the sidebarmenu */
+.skin-blue .main-sidebar .sidebar .sidebar-menu .active a{
+                      background-color: var(--grey-main_active);
+                      border-left: 3px solid var(--grey-main_active);
+                      }
+
+/* other links in the sidebarmenu */
+.skin-blue .main-sidebar .sidebar .sidebar-menu a{
+                      background-color: var(--grey-main);
+                      border-left: 3px solid var(--grey-main);
+                      }
+
+/* other links in the sidebarmenu when hovered */
+ .skin-blue .main-sidebar .sidebar .sidebar-menu a:hover{
+                      background-color: var(--grey-main_hover);
+                      border-left: 3px solid var(--grey-main_hover);
+                      }
+
+
+/*Style des text-box*/
+.text-box {
+   border: 1px solid black;
+   margin: 10px;
+   padding-left: 5px;
+   padding-right: 5px;
+   border-radius: 10px;
+}
+
+.text-box h2 {
+   margin-top: 0px;
+   border-bottom: solid;
+}
+
+
+.header {
+  padding: 0px;
+  text-align: center;
+  background: var(--blue-main);
+  color: white;
+  font-size: 30px;
+}
+
+/*header des box*/
+.box {
+  border-radius: 10px;
+}
+.box-header{
+  color: white;
+  display: block;
+  padding: 10px;
+  position: relative;
+  background: var(--blue-main);
+  border-radius: 10px;
+}
+
+
+
+/* boutons */
+.btn-default {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 14px;
+  border-radius: 6px;
+  border: none;
+  margin-bottom:5px;
+
+  color: #fff;
+  background: linear-gradient(180deg, #4B91F7 0%, #367AF6 100%);
+   background-origin: border-box;
+  box-shadow: 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.btn-default:focus {
+  box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
+  outline: 0;
+}
+

@@ -11,25 +11,26 @@ app_ui <- function(request) {
     # Leave this function for adding external resources
     golem_add_external_resources(),
     # Your application UI logic
-    # fluidPage(
-    #   navb
-    #   h1("outilFragilite")
-    # )
     dashboardPage(
       header = dashboardHeader(
-        title = "Outil fragrilité"
+        title = "Outil fragilité", disable = F,
+        tags$li(class = "dropdown", tags$a(href="mailto:support@support.com",
+                                           icon("envelope"), target="_blank")),
+        tags$li(class = "dropdown", tags$a(href="#",
+                                           icon("question"), target="_blank")),
+        tags$li(class = "dropdown", tags$img(src="www/img/Ministere-Sante-logo.jpg",
+                                             height='50',width='100'))
       ),
       sidebar = dashboardSidebar(
         sidebarMenu(
           menuItem("Accueil", icon = NULL, tabName  = "accueil"),
           menuItem("Tableau de score", icon = NULL, tabName  = "tab-de-score"),
-          menuItem("Score par établissement", icon = NULL,
-                   menuSubItem("Liste établissement", tabName  = "list-tab-etab"),
-                   menuSubItem("Etablissement séléctionné", tabName  = "focus-tab-etab")),
+          menuItem("Score par établissement", icon = NULL),
+          menuSubItem("Liste établissement", tabName  = "list-tab-etab"),
+          menuSubItem("Etablissement séléctionné", tabName  = "focus-tab-etab"),
           menuItem("Cartographie", icon = NULL, tabName  = "carto"),
           menuItem("Comparateur", icon = NULL, tabName  = "comparateur"),
           menuItem("Export", icon = NULL, tabName  = "export"),
-          br(),br(),
           menuItem("Paramètres avancés", icon = NULL, tabName  = "param")
         )
       ),
