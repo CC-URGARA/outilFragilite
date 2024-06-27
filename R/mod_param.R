@@ -25,12 +25,12 @@ mod_param_ui <- function(id){
 #' param Server Functions
 #'
 #' @noRd
-mod_param_server <- function(id){
+mod_param_server <- function(id, r_global = r_global){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 
     output$tab_param_indic <- renderDT(expr = {
-      datatable(iris, editable = list(target = "column", disable = list(columns = 0:3)),
+      datatable(shinipsum::random_table(nrow = 10, ncol = 4), editable = list(target = "column", disable = list(columns = 0:3)),
                 options = list(searching = FALSE, paging = FALSE, lengthChange = FALSE,
                                pageLength = Inf, bInfo = FALSE, autoWidth = TRUE),
                 rownames = FALSE, escape = TRUE,

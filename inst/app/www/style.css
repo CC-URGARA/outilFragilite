@@ -2,37 +2,45 @@
 /*Couleurs choisient sur la palette du gouvernement : https://www.systeme-de-design.gouv.fr/elements-d-interface/fondamentaux-de-l-identite-de-l-etat/couleurs-palette/*/
 :root {
  --blue-main: #000091;
- --blue-main_active: #1212ff;
- --blue-main_hover: #2323ff;
+ --blue-main_active: #2323ff;
+ --blue-main_hover: #1212ff;
  --grey-main: #666666;
  --grey-main_active: #a6a6a6;
  --grey-main_hover: #919191;
+ --lightblue-main: #518fff;
+ --lightgrey-main: #cecece;
+ --lightgrey-main_active: #939393;
+ --lightgrey-main_hover: #a8a8a8;
 }
 
+/*background of the app */
+.skin-blue .wrapper {
+  background-color: #ecf0f5;
+}
 
 /* logo */
 .skin-blue .main-header .logo {
-                      background-color: var(--blue-main_active);
+                      background-color: var(--blue-main);
                       }
 
 /* logo when hovered */
 .skin-blue .main-header .logo:hover {
-                      background-color: var(--blue-main_hover);
+                      background-color: var(--blue-main);
                       }
 
 /* navbar (rest of the header) */
 .skin-blue .main-header .navbar {
-                      background-color: var(--blue-main);
+                      background-color: var(--grey-main);
                       }
 
 /* toggle button when hovered  */
 .skin-blue .main-header .navbar .sidebar-toggle:hover{
-                    background-color: var(--blue-main_hover);
+                    background-color: var(--grey-main_hover);
                     }
 
 /* icon button when hovered  */
 .skin-blue .main-header .navbar .dropdown:hover{
-                    background-color: var(--blue-main_hover);
+                    background-color: var(--grey-main_hover);
                     }
 
 /* main sidebar */
@@ -44,19 +52,28 @@
 .skin-blue .main-sidebar .sidebar .sidebar-menu .active a{
                       background-color: var(--grey-main_active);
                       border-left: 3px solid var(--grey-main_active);
+                      color: #fff;
                       }
 
 /* other links in the sidebarmenu */
 .skin-blue .main-sidebar .sidebar .sidebar-menu a{
                       background-color: var(--grey-main);
                       border-left: 3px solid var(--grey-main);
+                      color: #fff;
                       }
 
 /* other links in the sidebarmenu when hovered */
  .skin-blue .main-sidebar .sidebar .sidebar-menu a:hover{
                       background-color: var(--grey-main_hover);
                       border-left: 3px solid var(--grey-main_hover);
+                      color: #fff;
                       }
+
+/*Sous titre dans la sidebar*/
+li.subtitle {
+  font-weight: bold;
+  color: #fff;
+}
 
 
 /*Style des text-box*/
@@ -85,16 +102,21 @@
 /*header des box*/
 .box {
   border-radius: 10px;
+  border-top: 0px solid #d2d6de;
 }
 .box-header{
   color: white;
   display: block;
   padding: 10px;
   position: relative;
-  background: var(--blue-main);
+  background: var(--lightblue-main);
   border-radius: 10px;
 }
 
+/*le bouton +/- utilisé pour réduire les box*/
+.btn.btn-box-tool {
+  color: black;
+}
 
 
 /* boutons */
@@ -119,5 +141,42 @@
 .btn-default:focus {
   box-shadow: inset 0px 0.8px 0px -0.25px rgba(255, 255, 255, 0.2), 0px 0.5px 1.5px rgba(54, 122, 246, 0.25), 0px 0px 0px 3.5px rgba(58, 108, 217, 0.5);
   outline: 0;
+}
+
+
+/*navbar pills*/
+
+li[role="presentation"] {
+  display: inline-block;
+  color: black;
+  background-color: #e5e5e5;
+  text-align: center;
+  padding: 0;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+
+/*pickerinput*/
+.btn.dropdown-toggle.btn-default {
+  background: var(--lightgrey-main);
+  color:black;
+}
+
+.btn.dropdown-toggle.btn-default:hover {
+  background: var(--lightgrey-main_hover);
+  color:white;
+}
+
+.btn.dropdown-toggle.btn-default:active {
+  background: var(--lightgrey-main_active);
+  color:white;
+}
+
+.dropdown.bootstrap-select.show-tick.form-control.shiny-bound-input.bs3{
+  background: inherit;/*évite un blanc sous le bouton*/
 }
 

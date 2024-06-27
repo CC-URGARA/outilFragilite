@@ -25,7 +25,7 @@ app_ui <- function(request) {
         sidebarMenu(
           menuItem("Accueil", icon = NULL, tabName  = "accueil"),
           menuItem("Tableau de score", icon = NULL, tabName  = "tab-de-score"),
-          menuItem("Score par établissement", icon = NULL),
+          tags$li("Score par établissement :", class = "subtitle"),
           menuSubItem("Liste établissement", tabName  = "list-tab-etab"),
           menuSubItem("Etablissement séléctionné", tabName  = "focus-tab-etab"),
           menuItem("Cartographie", icon = NULL, tabName  = "carto"),

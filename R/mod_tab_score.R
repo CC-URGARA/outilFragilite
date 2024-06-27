@@ -22,13 +22,13 @@ mod_tab_score_ui <- function(id){
 #' tab_score Server Functions
 #'
 #' @noRd
-mod_tab_score_server <- function(id){
+mod_tab_score_server <- function(id, r_global = r_global){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 
     output$tab_score <- renderDT({
-      random_table(ncol = 5, nrow = 95) |>
-        DT_theme(theme = "top_filter")
+      r_global$res_fragilite$table_score_clean |>
+        DT_theme(theme = "top_filter", col_disable_filter = c(1, 2))
     })
 
   })

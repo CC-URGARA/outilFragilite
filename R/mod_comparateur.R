@@ -47,7 +47,7 @@ mod_comparateur_ui <- function(id){
 #' comparateur Server Functions
 #'
 #' @noRd
-mod_comparateur_server <- function(id){
+mod_comparateur_server <- function(id, r_global = r_global){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 

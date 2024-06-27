@@ -368,38 +368,24 @@ make_action_button <- function(tag, inputId = NULL) {
 }
 
 
-# UNCOMMENT AND USE
-#
-# attachment::att_amend_desc()
-#
-# To use this part of the UI
-#
-#' #' Include Content From a File
-#' #'
-#' #' Load rendered RMarkdown from a file and turn into HTML.
-#' #'
-#' #' @rdname includeRMarkdown
-#' #' @export
-#' #'
-#' #' @importFrom rmarkdown render
-#' #' @importFrom markdown markdownToHTML
-#' #' @importFrom shiny HTML
-#' includeRMarkdown <- function(path){
+#' pickerInputOptions
 #'
-#'   md <- tempfile(fileext = '.md')
+#' @description Apply options for pickerInput
 #'
-#'   on.exit(unlink(md),add = TRUE)
+#' @return options for a pickerinput
 #'
-#'   rmarkdown::render(
-#'     path,
-#'     output_format = 'md_document',
-#'     output_dir = tempdir(),
-#'     output_file = md,quiet = TRUE
-#'     )
-#'
-#'   html <- markdown::markdownToHTML(md, fragment.only = TRUE)
-#'
-#'   Encoding(html) <- "UTF-8"
-#'
-#'   return(HTML(html))
-#' }
+#' @importFrom shinyWidgets pickerOptions
+#' @noRd
+pickerInputOptions_custom <- function(){
+  pickerOptions(
+    `selected-text-format` = "count > 2",
+    `actions-box` = TRUE,
+    noneSelectedText = "Vide",
+    selectAllText = "Tout sélectionner",
+    countSelectedText = "{0} élements sélectionnés",
+    deselectAllText = "Tout déselectionner",
+    liveSearch = TRUE,
+    size = 10
+  )
+}
+

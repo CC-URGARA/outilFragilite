@@ -21,7 +21,7 @@ mod_carto_ui <- function(id){
 #' carto Server Functions
 #'
 #' @noRd
-mod_carto_server <- function(id){
+mod_carto_server <- function(id, r_global = r_global){
   moduleServer( id, function(input, output, session){
     ns <- session$ns
 

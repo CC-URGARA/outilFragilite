@@ -32,8 +32,13 @@ golem::add_module(name = "param", with_test = TRUE) # Name of the module
 ## Add helper functions ----
 ## Creates fct_* and utils_*
 golem::add_fct("themes", with_test = TRUE)
+golem::add_fct("compute_frailty", with_test = TRUE)
+golem::add_fct("filter_table_score_EG_clean", with_test = TRUE)
+golem::add_fct("plot_indic", with_test = TRUE)
 
-golem::add_utils("dictionary", with_test = TRUE)
+
+
+golem::add_utils("utils", with_test = TRUE)
 
 ## External resources
 ## Creates .js and .css files at inst/app/www
@@ -45,6 +50,7 @@ golem::add_sass_file("custom")
 ## Add internal datasets ----
 ## If you have data in your package
 usethis::use_data_raw(name = "data_preparation", open = FALSE)
+usethis::use_data_raw(name = "tab_dpt_region", open = FALSE)
 
 ## Tests ----
 ## Add one line by test you want to create
