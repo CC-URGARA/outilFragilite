@@ -119,7 +119,7 @@ mod_score_list_etab_server <- function(id, r_global = r_global){
     #Outputs
     output$tab_etab <- renderDT({
       r_local$tab_filtered |>
-        DT_theme(theme = "minimal")
+        DT_theme(theme = "minimal", clickable = T)
     })
 
   })
