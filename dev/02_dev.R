@@ -28,6 +28,7 @@ golem::add_module(name = "carto", with_test = TRUE) # Name of the module
 golem::add_module(name = "comparateur", with_test = TRUE) # Name of the module
 golem::add_module(name = "export", with_test = TRUE) # Name of the module
 golem::add_module(name = "param", with_test = TRUE) # Name of the module
+golem::add_module(name = "mod_plot_comparateur", with_test = TRUE)
 
 ## Add helper functions ----
 ## Creates fct_* and utils_*
@@ -35,6 +36,7 @@ golem::add_fct("themes", with_test = TRUE)
 golem::add_fct("compute_frailty", with_test = TRUE)
 golem::add_fct("filter_table_score_EG_clean", with_test = TRUE)
 golem::add_fct("plot_indic", with_test = TRUE)
+golem::add_fct("text_accueil", with_test = TRUE)
 
 
 

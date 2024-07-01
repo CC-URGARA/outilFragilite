@@ -15,24 +15,16 @@ mod_accueil_ui <- function(id){
     ),
     box(id = ns("contexte"), title = "Contexte",
         width = 12, collapsible = T,
-        random_text(nwords = 100)),
+        texte_accueil(type = "Contexte")),
     box(id = ns("objectif"), title = "Objectif",
         width = 12, collapsible = T,
-        random_text(nwords = 15)),
+        texte_accueil(type = "Objectif")),
     box(id = ns("sources-donnees"), title = "Sources de données",
         width = 12, collapsible = T,
-        tags$ul(
-          tags$li("a"),
-          tags$li("b"),
-          tags$li("c"),
-          tags$li("d"),
-          tags$li("e"))),
+        texte_accueil(type = "Sources")),
     box(id = ns("mode-emploi"), title = "Mode d'emploi",
         width = 12, collapsible = T,
-        h3("titre 1"),
-        p(random_text(nwords = 150)),
-        h3("titre 2"),
-        p(random_text(nwords = 120))),
+        texte_accueil(type = "Guide")),
   )
 }
 

@@ -1,9 +1,8 @@
-+ Cacher etablissement selectionné tant qu'un étab n'est pas select
-+ Créer les jeux de données (dataman)
 + Implémenter V1.5
-  - tableau de score
-  - list etab
-  - etab select
+  - écrire l'accueil
   - carto ?
   - comparateur
   - export
+
+
+Commenter et tester
